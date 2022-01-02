@@ -33,8 +33,12 @@ app.post("/api/notes", (req, res) => {
     res.json(newNote);
 });
 
-
-
+// function to add new note to list
+function createNewNote(body, notes) {
+    const note = body;
+    notes.push(note);
+    fs.writeFileSync(path.join(__dirname, "./db/db.json"), JSON.stringify(noteList, null, 2));
+}
 
 
 
