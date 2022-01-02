@@ -7,5 +7,15 @@
     "title": "testing testing ",
     "text": "this is a note test\n",
     "id": "1"
+  },
+  {
+    "title": "new note",
+    "text": "dont forget to make a walkthrough video!\n",
+    "id": "2"
+  },
+  {
+    "title": "homework",
+    "text": "turn in your homework!",
+    "id": "3"
   }
 ]
