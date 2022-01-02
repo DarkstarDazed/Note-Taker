@@ -1,4 +1,3 @@
-
 // dependencies
 const express = require('express');
 const fs = require('fs');
@@ -12,7 +11,6 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 app.use(express.static('public'));
-
 // html routes and get/post requests
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
@@ -32,16 +30,12 @@ app.post("/api/notes", (req, res) => {
     createNewNote(newNote, noteList);
     res.json(newNote);
 });
-
 // function to add new note to list
 function createNewNote(body, notes) {
     const note = body;
     notes.push(note);
     fs.writeFileSync(path.join(__dirname, "./db/db.json"), JSON.stringify(noteList, null, 2));
 }
-
-
-
 // listen for connections
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);
